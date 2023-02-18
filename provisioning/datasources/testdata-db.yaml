@@ -1,0 +1,12 @@
+#config file version
+apiVersion: 1
+
+# list of datasources to insert/update depending
+# on what's available in the database
+datasources:
+  - name: "TestData DB"
+    type: "testdata"
+    uid: "k_-d6014k"
+    typeName: "TestData DB"
+    editable: false
+    verion: 1
