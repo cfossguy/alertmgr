@@ -1,9 +1,0 @@
-#token - 4000
-glsa_MUaWhtED1FD5tNSaeCI8RZcQS13FCIuz_fa4ac32a
-
-curl -X POST http://localhost:4000/api/v1/provisioning/alert-rules -H 'Content-Type: application/json' -H 'X-Disable-Provenance: true' -H "Authorization: Bearer glsa_MUaWhtED1FD5tNSaeCI8RZcQS13FCIuz_fa4ac32a" -d @alerts.json
-
-Drop commands
-delete from alert_instance;
-delete from alert_rule;
-delete from alert_rule_version;
