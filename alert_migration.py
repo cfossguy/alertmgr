@@ -52,6 +52,6 @@ def delete_alerts(namespace_uid):
         logging.error(f'alert_rule import error - {ie}')
 
 if __name__ == "__main__":
-    delete_alerts("94Jse01Vz")
+    #delete_alerts("94Jse01Vz")
     export_alerts()
     import_alerts()
