@@ -5,6 +5,7 @@ from sqlalchemy import create_engine, text, delete, Table, Column, MetaData
 from sqlalchemy.exc import IntegrityError
 from dotenv import load_dotenv
 import pandas as pd
+import sys
 
 handler_stream = logging.StreamHandler()
 logging.basicConfig(format='%(levelname)s - %(message)s')
@@ -52,6 +53,11 @@ def delete_alerts(namespace_uid):
         logging.error(f'alert_rule import error - {ie}')
 
 if __name__ == "__main__":
-    #delete_alerts("94Jse01Vz")
-    export_alerts()
-    import_alerts()
+    if sys.argv[1] == 'delete':
+        delete_alerts("94Jse01Vz")
+    elif sys.argv[1] == "export":
+        export_alerts()
+    elif sys.argv[1] == "import":
+        import_alerts()
+    else:
+        logging.error("You must specify 1 command: 'delete', 'export', 'import'")
